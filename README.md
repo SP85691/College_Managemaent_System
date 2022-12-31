@@ -21,8 +21,7 @@ In this Project, I have created a College Management System using MySQL. It is u
 ## Login Table
 There are Two Ways to Create any table in Workbench.
   - First is to make table by running the query. <br>
-    <code>
-      CREATE TABLE `college_management_system`.`login` (
+    <code>CREATE TABLE `college_management_system`.`login` (
       `user_id` INT NOT NULL,
       `email` VARCHAR(45) NOT NULL,
       `passw` VARCHAR(45) NOT NULL,
@@ -33,7 +32,7 @@ There are Two Ways to Create any table in Workbench.
       REFERENCES `college_management_system`.`student` (`student_id`)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION);
-    </code
+    </code>
     
     <br>
       
