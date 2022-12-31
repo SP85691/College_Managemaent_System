@@ -1,0 +1,88 @@
+CREATE TABLE `college_management_system`.`student` (
+  `student_id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `dob` VARCHAR(45) NOT NULL,
+  `enrollment_no` VARCHAR(45) NOT NULL,
+  `course` VARCHAR(45) NOT NULL,
+  `semester` INT NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`student_id`),
+  UNIQUE INDEX `student_id_UNIQUE` (`student_id` ASC) VISIBLE);
+
+INSERT INTO `college_management_system`.`student` (`student_id`, `name`, `dob`, `enrollment_no`, `course`, `semester`, `email`) VALUES (121009, 'Surya Pratap', '03-06-2002', 'ASB/BCA/20/043', 'BCA', '6', 'surya.pratap@asb.edu.in'), 
+INSERT INTO `college_management_system`.`student` (`student_id`, `name`, `dob`, `enrollment_no`, `course`, `semester`, `email`) VALUES (121010, 'Prashant Bhatt', '20-12-2002', 'ASB/BCA/20/030', 'BCA', '4', 'prshant.bhatt@asb.edu.in'), 
+INSERT INTO `college_management_system`.`student` (`student_id`, `name`, `dob`, `enrollment_no`, `course`, `semester`, `email`) VALUES (121011, 'Alok Chaurasia', '10-10-2000', 'ASB/BCA/20/012', 'BCA', '6', 'alok.chaurasia@asb.edu.in'), 
+INSERT INTO `college_management_system`.`student` (`student_id`, `name`, `dob`, `enrollment_no`, `course`, `semester`, `email`) VALUES (121007, 'Salena Gomez', '25-08-1999', 'ASB/BCA/20/033', 'BCA', '5', 'salena.gomez@asb.edu.in');
+SELECT * FROM college_management_system.student;
+
+CREATE TABLE `college_management_system`.`faculty` (
+  `faculty_id` INT NOT NULL AUTO_INCREMENT,
+  `faculty_name` VARCHAR(45) NOT NULL,
+  `dob` VARCHAR(45) NOT NULL,
+  `department` VARCHAR(45) NOT NULL,
+  `designation` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`faculty_id`),
+  UNIQUE INDEX `faculty_id_UNIQUE` (`faculty_id` ASC) VISIBLE);
+
+INSERT INTO `college_management_system`.`faculty` (`faculty_id`, `faculty_name`, `dob`, `department`, `designation`, `email`) VALUES (256121, 'Prof. Shyla', '11-09-1992', 'DBMS', 'Assistant Professor', 'shyla@asb.edu.in'), 
+INSERT INTO `college_management_system`.`faculty` (`faculty_id`, `faculty_name`, `dob`, `department`, `designation`, `email`) VALUES ('256102', 'Prof. Upesh Bhatnagar', '21-03-1978', 'Computer Network', 'Assistent Professor', 'upesh.bhatnagar@asb.edu.in');
+INSERT INTO `college_management_system`.`faculty` (`faculty_id`, `faculty_name`, `dob`, `department`, `designation`, `email`) VALUES ('256122', 'Prof. Nehu Gumber', '21-03-1991', 'OOPS', 'Assistent Professor', 'nehu.gumber@asb.edu.in');
+INSERT INTO `college_management_system`.`faculty` (`faculty_id`, `faculty_name`, `dob`, `department`, `designation`, `email`) VALUES ('256127', 'Prof. Nupur Sharma', '31-05-1985', 'PDCC', 'CSW', 'nupur.sharma@asb.edu.in');
+SELECT * FROM college_management_system.faculty;
+
+CREATE TABLE `college_management_system`.`login` (
+  `user_id` INT NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `passw` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `user_id`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `college_management_system`.`student` (`student_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+INSERT INTO `college_management_system`.`login` (`user_id`, `email`, `passw`) VALUES ('121009', 'surya.prata@asb.edu.in', 'Surya@1234');
+INSERT INTO `college_management_system`.`login` (`user_id`, `email`, `passw`) VALUES ('121010', 'prashant.bhat@asb.edu.in', 'Prashant@4321');
+SELECT * FROM college_management_system.login;
+
+SELECT user_id, name, login.email, passw 
+FROM college_management_system.login, college_management_system.student 
+WHERE user_id = student_id;
+
+CREATE TABLE `college_management_system`.`course` (
+  `course_code` INT NOT NULL,
+  `course_name` VARCHAR(45) NOT NULL,
+  `course_type` VARCHAR(45) NOT NULL,
+  `lecturer` VARCHAR(45) NOT NULL,
+  `semester` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`course_code`),
+  UNIQUE INDEX `course_code_UNIQUE` (`course_code` ASC) VISIBLE);
+
+INSERT INTO college_management_system.course (`course_code`, `course_name`, `course_type`, `lecturer`, `semester`) VALUES ('302', 'Object Oriented Programming', 'Technical', 'Prof. Nehu Gumber', '3');
+INSERT INTO college_management_system.course (`course_code`, `course_name`, `course_type`, `lecturer`, `semester`) VALUES ('301', 'Data Structure', 'Technical', 'Prof. Shyla', '3');
+INSERT INTO college_management_system.course (`course_code`, `course_name`, `course_type`, `lecturer`, `semester`) VALUES ('501', 'JAVA', 'Technical', 'Prof. Suvidha Agarwal', '5');
+INSERT INTO college_management_system.course (`course_code`, `course_name`, `course_type`, `lecturer`, `semester`) VALUES ('302', 'Object Oriented Programming', 'Technical', 'Prof. Nehu Gumber', '3');
+INSERT INTO college_management_system.course (`course_code`, `course_name`, `course_type`, `lecturer`, `semester`) VALUES ('301', 'Data Structure', 'Technical', 'Prof. Shyla', '3');
+INSERT INTO college_management_system.course (`course_code`, `course_name`, `course_type`, `lecturer`, `semester`) VALUES ('501', 'JAVA', 'Technical', 'Prof. Suvidha Agarwal', '5');
+INSERT INTO college_management_system.course (`course_code`, `course_name`, `course_type`, `lecturer`, `semester`) VALUES ('502', 'Database Management System', 'Technical', 'Prof. Shyla', '5');
+INSERT INTO college_management_system.course (`course_code`, `course_name`, `course_type`, `lecturer`, `semester`) VALUES ('508', 'German', 'Non-Technical', 'Prof. Rajni', '5');
+INSERT INTO college_management_system.course (`course_code`, `course_name`, `course_type`, `lecturer`, `semester`) VALUES ('602', 'E-Commerce', 'Technical', 'Prof. Upesh Bhatnagar', '6');
+SELECT * FROM college_management_system.course;
+
+CREATE TABLE `college_management_system`.`exams` (
+  `student_id` INT NOT NULL AUTO_INCREMENT,
+  `exam_name` VARCHAR(45) NOT NULL,
+  `exam_date` VARCHAR(45) NULL,
+  `grade` INT NOT NULL,
+  PRIMARY KEY (`student_id`),
+  UNIQUE INDEX `student_id_UNIQUE` (`student_id` ASC) VISIBLE);
+
+INSERT INTO college_management_system.exams (`student_id`, `exam_name`, `exam_date`, `grade`) VALUES ('121009', 'Numerical Methods', '02-01-2023', '85');
+INSERT INTO college_management_system.exams (`student_id`, `exam_name`, `exam_date`, `grade`) VALUES ('121011', 'Database Management System', '03-01-2023', '92');
+SELECT * FROM college_management_system.exams;
+
+
+
+
