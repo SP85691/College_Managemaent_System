@@ -35,19 +35,20 @@ There are Two Ways to Create any table in Workbench.
       ON UPDATE NO ACTION);
     </code>
     <br>
-    <output>![image](https://user-images.githubusercontent.com/86033489/210123518-c7cf8c73-f8b0-4f0c-8842-31f569313a69.png)</output><br>
     **< INSERT TABLE >** <br>
-    <code>
-      INSERT INTO `college_management_system`.`login` (`user_id`, `email`, `passw`) VALUES ('121009', 'surya.prata@asb.edu.in', 'Surya@1234');
+    <code>INSERT INTO `college_management_system`.`login` (`user_id`, `email`, `passw`) VALUES ('121009', 'surya.prata@asb.edu.in', 'Surya@1234');
       INSERT INTO `college_management_system`.`login` (`user_id`, `email`, `passw`) VALUES ('121010', 'prashant.bhat@asb.edu.in', 'Prashant@4321');
       SELECT * FROM college_management_system.login;
     </code>
     <br>
-    **< SELECT TABLE > ** <br>
-    <code>
-      SELECT user_id, name, login.email, passw 
+    **< SELECT TABLE >** <br>
+    <code>SELECT user_id, name, login.email, passw 
       FROM college_management_system.login, college_management_system.student 
       WHERE user_id = student_id;
     </code>
     <br>
+    ## Output
+    <output>![image](https://user-images.githubusercontent.com/86033489/210123518-c7cf8c73-f8b0-4f0c-8842-31f569313a69.png)</output><br>
   - Second is to make table by commands. <br>
+    ![image](https://user-images.githubusercontent.com/86033489/210123565-9195c5a6-36e7-488d-8b4a-2242b064fd20.png)
+
