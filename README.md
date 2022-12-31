@@ -46,9 +46,8 @@ There are Two Ways to Create any table in Workbench.
       FROM college_management_system.login, college_management_system.student 
       WHERE user_id = student_id;
     </code>
-    <br>
     ## Output
-    <output>![image](https://user-images.githubusercontent.com/86033489/210123518-c7cf8c73-f8b0-4f0c-8842-31f569313a69.png)</output><br>
-  - Second is to make table by commands. <br>
+    <output>![image](https://user-images.githubusercontent.com/86033489/210123518-c7cf8c73-f8b0-4f0c-8842-31f569313a69.png)</output>
+  - Second is to make table by commands. 
     ![image](https://user-images.githubusercontent.com/86033489/210123565-9195c5a6-36e7-488d-8b4a-2242b064fd20.png)
 
