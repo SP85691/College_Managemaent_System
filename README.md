@@ -51,7 +51,7 @@ There are Two Ways to Create any table in Workbench.
     ![image](https://user-images.githubusercontent.com/86033489/210123596-88bbbb04-aa2e-4a0c-8f92-68a91ad197ff.png)
   
   ## Output
-    <output>![image](https://user-images.githubusercontent.com/86033489/210123518-c7cf8c73-f8b0-4f0c-8842-31f569313a69.png)</output>
+    ![image](https://user-images.githubusercontent.com/86033489/210123518-c7cf8c73-f8b0-4f0c-8842-31f569313a69.png)
  
 ## Student Table
 There are Two Ways to Create any table in Workbench.
@@ -83,5 +83,5 @@ There are Two Ways to Create any table in Workbench.
   ![image](https://user-images.githubusercontent.com/86033489/210123676-b85382fc-1395-4371-b8e5-cae1cf87c0ab.png)
   
   ## Output
-    <output>![image](https://user-images.githubusercontent.com/86033489/210123681-778bf807-849d-470c-bbc4-29af26c74104.png)</output>
+    ![image](https://user-images.githubusercontent.com/86033489/210123681-778bf807-849d-470c-bbc4-29af26c74104.png)
 
